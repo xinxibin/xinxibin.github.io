@@ -81,7 +81,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Ubuntu,Nginx," />
 
 
 
@@ -99,13 +99,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="xibin&#39;s Blog">
-<meta property="og:url" content="https://xinxibin.com/archives/index.html">
+<meta name="description" content="在Ubuntu 16.0.4 配置 Nginx  本教程要讲解，域名访问服务器目录，打开指定文件html的方法  傻瓜式教程简单实用1次就能学会  开始之前，前提是，购买过域名 点击购买 域名解析，没有配置可以去配置DNSPOD 有服务器，没有可以购买google云">
+<meta name="keywords" content="Ubuntu,Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 16.04 配置访问域名指向服务器位置">
+<meta property="og:url" content="https://xinxibin.com/2017/04/21/Ubuntu-16-04-Nginx-conf/index.html">
 <meta property="og:site_name" content="xibin&#39;s Blog">
+<meta property="og:description" content="在Ubuntu 16.0.4 配置 Nginx  本教程要讲解，域名访问服务器目录，打开指定文件html的方法  傻瓜式教程简单实用1次就能学会  开始之前，前提是，购买过域名 点击购买 域名解析，没有配置可以去配置DNSPOD 有服务器，没有可以购买google云">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-05-03T02:22:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xibin&#39;s Blog">
+<meta name="twitter:title" content="Ubuntu 16.04 配置访问域名指向服务器位置">
+<meta name="twitter:description" content="在Ubuntu 16.0.4 配置 Nginx  本教程要讲解，域名访问服务器目录，打开指定文件html的方法  傻瓜式教程简单实用1次就能学会  开始之前，前提是，购买过域名 点击购买 域名解析，没有配置可以去配置DNSPOD 有服务器，没有可以购买google云">
 
 
 
@@ -126,9 +131,9 @@
 
 
 
-  <link rel="canonical" href="https://xinxibin.com/archives/"/>
+  <link rel="canonical" href="https://xinxibin.com/2017/04/21/Ubuntu-16-04-Nginx-conf/"/>
 
-  <title> 归档 | xibin's Blog </title>
+  <title> Ubuntu 16.04 配置访问域名指向服务器位置 | xibin's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +164,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,407 +262,211 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 31 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/11/Smart-Home/" itemprop="url">
-              
-                <span itemprop="name">Smart Home</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-11T11:19:53+08:00"
-              content="2017-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/08/RaspberryPi-HomeKit-use-Siri/" itemprop="url">
-              
-                <span itemprop="name">RaspberryPi-HomeKit use Siri</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-08T17:24:52+08:00"
-              content="2017-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/08/Raspberry-install-RASPBIAN-JESSIE/" itemprop="url">
-              
-                <span itemprop="name">在苹果MAC系统上给树莓派SD卡装系统raspbian</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-08T12:29:46+08:00"
-              content="2017-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/25/2017-05-25-Python-App-API/" itemprop="url">
-              
-                <span itemprop="name">使用Python教你写APP接口-基础教程</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-25T17:29:32+08:00"
-              content="2017-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/25/Swift-IAP-Easy-Use/" itemprop="url">
-              
-                <span itemprop="name">Xcode 8.3.2 Swift 实现内购</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-25T14:58:32+08:00"
-              content="2017-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/09/Swift-ChangeAppIconDemo/" itemprop="url">
-              
-                <span itemprop="name">Swift-动态修改AppIcon图标、更改应用图标</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-09T15:33:37+08:00"
-              content="2017-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/21/Hexo-blog-on-Ubuntu-16-04/" itemprop="url">
-              
-                <span itemprop="name">Google 云服务搭建 git服务，实现Hexo自动部署</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-21T16:27:51+08:00"
-              content="2017-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/21/Ubuntu-16-04-Nginx-conf/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu 16.04 配置访问域名指向服务器位置</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-21T15:58:05+08:00"
-              content="2017-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/21/Ubuntu-16-04-install-Nginx/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu 16.04 安装·配置 Nginx</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-21T15:39:59+08:00"
-              content="2017-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/14/Swift-TagView/" itemprop="url">
-              
-                <span itemprop="name">Swift 标签视图带动画</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-14T10:57:08+08:00"
-              content="2016-11-14" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ubuntu 16.04 配置访问域名指向服务器位置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-21T15:58:05+08:00" content="2017-04-21">
+              2017-04-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Document/" itemprop="url" rel="index">
+                    <span itemprop="name">Document</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Document/Nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">Nginx</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/21/Ubuntu-16-04-Nginx-conf/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/21/Ubuntu-16-04-Nginx-conf/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/04/21/Ubuntu-16-04-Nginx-conf/" class="leancloud_visitors" data-flag-title="Ubuntu 16.04 配置访问域名指向服务器位置">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在Ubuntu 16.0.4 配置 Nginx </p>
+<p>本教程要讲解，域名访问服务器目录，打开指定文件html的方法</p>
+<blockquote>
+<p>傻瓜式教程<br>简单实用<br>1次就能学会</p>
+</blockquote>
+<p>开始之前，前提是，购买过域名 <a href="wanwang.aliyun.com">点击购买</a></p>
+<p>域名解析，没有配置可以去配置<a href="https://www.dnspod.cn/" target="_blank" rel="noopener">DNSPOD</a></p>
+<p>有服务器，没有可以购买<a href="https://console.cloud.google.com" target="_blank" rel="noopener">google云</a></p>
+<a id="more"></a>
+<h2 id="第一步：进入服务器-ssh-ip"><a href="#第一步：进入服务器-ssh-ip" class="headerlink" title="第一步：进入服务器 ssh ip"></a>第一步：进入服务器 ssh ip</h2><pre><code>ssh serviceIP (这里使用ssh 进入)
+</code></pre><h2 id="第二步：配置-Nginx-目录"><a href="#第二步：配置-Nginx-目录" class="headerlink" title="第二步：配置 Nginx 目录"></a>第二步：配置 Nginx 目录</h2><p>内容很多主要先配置server<br>这里配置为如下（其他字段暂时不用考虑删掉即可）</p>
+<p>方法一：</p>
+<pre><code>sudo nano /etc/nginx/sites-enabled/default
+</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">       listen <span class="number">80</span>;</span><br><span class="line">       listen [::]:<span class="number">80</span>;</span><br><span class="line">       server_name www.xxxx.com xxxx.com;</span><br><span class="line"></span><br><span class="line">       root /<span class="keyword">var</span>/www/<span class="keyword">public</span>;</span><br><span class="line">       index index.html;</span><br><span class="line"></span><br><span class="line">       location / &#123;</span><br><span class="line">               try_files $uri $uri/ =<span class="number">404</span>;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法二：</p>
+<pre><code>sudo nano /etc/nginx/nginx.conf
+</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen <span class="number">80</span>;</span><br><span class="line">    <span class="comment">#listen [::]:80;</span></span><br><span class="line">    server_name www.xxxx.com xxxx.com;</span><br><span class="line">    index index.html index.htm index.php <span class="keyword">default</span>.html <span class="keyword">default</span>.htm <span class="keyword">default</span>.php;</span><br><span class="line">    <span class="comment">#这里要改成网站的根目录</span></span><br><span class="line">    root  /www/<span class="keyword">public</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">include</span> other.conf;</span><br><span class="line">    <span class="comment">#error_page   404   /404.html;</span></span><br><span class="line">    location ~ .*\.(ico|gif|jpg|jpeg|png|bmp|swf)$</span><br><span class="line">    &#123;</span><br><span class="line">        access_log   off;</span><br><span class="line">        expires      <span class="number">1</span>d;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ .*\.(js|css|txt|xml)?$</span><br><span class="line">    &#123;</span><br><span class="line">        access_log   off;</span><br><span class="line">        expires      <span class="number">12</span>h;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri $uri/ =<span class="number">404</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    access_log  /home/wwwlogs/blog.log  access;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第三步-重启-Nginx-必须重启不然不生效"><a href="#第三步-重启-Nginx-必须重启不然不生效" class="headerlink" title="第三步 重启 Nginx (必须重启不然不生效)"></a>第三步 重启 Nginx (必须重启不然不生效)</h2><pre><code>sudo systemctl start nginx
+sudo systemctl reload nginx
+</code></pre><p><a href="http://www.xinxibin.com/2017/04/21/Ubuntu-16-04-install-Nginx/" target="_blank" rel="noopener">Nginx 安装及常用指令</a></p>
+<h2 id="第四步-访问域名（http）"><a href="#第四步-访问域名（http）" class="headerlink" title="第四步 访问域名（http）"></a>第四步 访问域名（http）</h2><p>确保根目录 root /var/www/public; 下有文件<br>确保 index.html 存在<br>如果都在的话，你会看到你所期望的页面</p>
+<h2 id="欢迎留言讨论遇到中的问题"><a href="#欢迎留言讨论遇到中的问题" class="headerlink" title="欢迎留言讨论遇到中的问题"></a>欢迎留言讨论遇到中的问题</h2><p><a href="https://github.com/xinxibin" target="_blank" rel="noopener">github</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！E</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/HeaderImage/weixin.png" alt="xinxibin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+          
+            <a href="/tags/Nginx/" rel="tag">#Nginx</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/21/Ubuntu-16-04-install-Nginx/" rel="next" title="Ubuntu 16.04 安装·配置 Nginx">
+                <i class="fa fa-chevron-left"></i> Ubuntu 16.04 安装·配置 Nginx
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/21/Hexo-blog-on-Ubuntu-16-04/" rel="prev" title="Google 云服务搭建 git服务，实现Hexo自动部署">
+                Google 云服务搭建 git服务，实现Hexo自动部署 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -665,6 +474,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/21/Ubuntu-16-04-Nginx-conf/"
+           data-title="Ubuntu 16.04 配置访问域名指向服务器位置" data-url="https://xinxibin.com/2017/04/21/Ubuntu-16-04-Nginx-conf/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -684,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/HeaderImage/MyHeaderImageView.png"
@@ -792,6 +618,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：进入服务器-ssh-ip"><span class="nav-number">1.</span> <span class="nav-text">第一步：进入服务器 ssh ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：配置-Nginx-目录"><span class="nav-number">2.</span> <span class="nav-text">第二步：配置 Nginx 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步-重启-Nginx-必须重启不然不生效"><span class="nav-number">3.</span> <span class="nav-text">第三步 重启 Nginx (必须重启不然不生效)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步-访问域名（http）"><span class="nav-number">4.</span> <span class="nav-text">第四步 访问域名（http）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欢迎留言讨论遇到中的问题"><span class="nav-number">5.</span> <span class="nav-text">欢迎留言讨论遇到中的问题</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -894,11 +731,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

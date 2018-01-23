@@ -81,7 +81,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CAShapeLayer," />
 
 
 
@@ -99,13 +99,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="xibin&#39;s Blog">
-<meta property="og:url" content="https://xinxibin.com/archives/index.html">
+<meta name="description" content="CAShapeLayer类  CAShapeLayer 继承 CALayer，可以使用 CALayer 的所有属性和方法 ； 它依附于一个给定的path,必须给与path,而且,即使path不完整也会自动首尾相接； strokeStart以及strokeEnd代表着在这个path中所占用的百分比； CAShapeLayer动画仅仅限于沿着边缘的动画效果,它实现不了填充效果。">
+<meta name="keywords" content="CAShapeLayer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS CAShapeLayer类详解">
+<meta property="og:url" content="https://xinxibin.com/2016/07/18/iOS-CAShapeLayer/index.html">
 <meta property="og:site_name" content="xibin&#39;s Blog">
+<meta property="og:description" content="CAShapeLayer类  CAShapeLayer 继承 CALayer，可以使用 CALayer 的所有属性和方法 ； 它依附于一个给定的path,必须给与path,而且,即使path不完整也会自动首尾相接； strokeStart以及strokeEnd代表着在这个path中所占用的百分比； CAShapeLayer动画仅仅限于沿着边缘的动画效果,它实现不了填充效果。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-07-19T05:11:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xibin&#39;s Blog">
+<meta name="twitter:title" content="iOS CAShapeLayer类详解">
+<meta name="twitter:description" content="CAShapeLayer类  CAShapeLayer 继承 CALayer，可以使用 CALayer 的所有属性和方法 ； 它依附于一个给定的path,必须给与path,而且,即使path不完整也会自动首尾相接； strokeStart以及strokeEnd代表着在这个path中所占用的百分比； CAShapeLayer动画仅仅限于沿着边缘的动画效果,它实现不了填充效果。">
 
 
 
@@ -126,9 +131,9 @@
 
 
 
-  <link rel="canonical" href="https://xinxibin.com/archives/"/>
+  <link rel="canonical" href="https://xinxibin.com/2016/07/18/iOS-CAShapeLayer/"/>
 
-  <title> 归档 | xibin's Blog </title>
+  <title> iOS CAShapeLayer类详解 | xibin's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +164,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,407 +262,201 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 31 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/11/Smart-Home/" itemprop="url">
-              
-                <span itemprop="name">Smart Home</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-11T11:19:53+08:00"
-              content="2017-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/08/RaspberryPi-HomeKit-use-Siri/" itemprop="url">
-              
-                <span itemprop="name">RaspberryPi-HomeKit use Siri</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-08T17:24:52+08:00"
-              content="2017-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/08/Raspberry-install-RASPBIAN-JESSIE/" itemprop="url">
-              
-                <span itemprop="name">在苹果MAC系统上给树莓派SD卡装系统raspbian</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-08T12:29:46+08:00"
-              content="2017-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/25/2017-05-25-Python-App-API/" itemprop="url">
-              
-                <span itemprop="name">使用Python教你写APP接口-基础教程</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-25T17:29:32+08:00"
-              content="2017-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/25/Swift-IAP-Easy-Use/" itemprop="url">
-              
-                <span itemprop="name">Xcode 8.3.2 Swift 实现内购</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-25T14:58:32+08:00"
-              content="2017-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/09/Swift-ChangeAppIconDemo/" itemprop="url">
-              
-                <span itemprop="name">Swift-动态修改AppIcon图标、更改应用图标</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-09T15:33:37+08:00"
-              content="2017-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/21/Hexo-blog-on-Ubuntu-16-04/" itemprop="url">
-              
-                <span itemprop="name">Google 云服务搭建 git服务，实现Hexo自动部署</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-21T16:27:51+08:00"
-              content="2017-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/21/Ubuntu-16-04-Nginx-conf/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu 16.04 配置访问域名指向服务器位置</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-21T15:58:05+08:00"
-              content="2017-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/21/Ubuntu-16-04-install-Nginx/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu 16.04 安装·配置 Nginx</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-21T15:39:59+08:00"
-              content="2017-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/14/Swift-TagView/" itemprop="url">
-              
-                <span itemprop="name">Swift 标签视图带动画</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-14T10:57:08+08:00"
-              content="2016-11-14" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS CAShapeLayer类详解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T22:38:13+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Code/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/18/iOS-CAShapeLayer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/iOS-CAShapeLayer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/18/iOS-CAShapeLayer/" class="leancloud_visitors" data-flag-title="iOS CAShapeLayer类详解">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CAShapeLayer类</p>
+<blockquote>
+<p>CAShapeLayer 继承 CALayer，可以使用 CALayer 的所有属性和方法 ；</p>
+<p>它依附于一个给定的path,必须给与path,而且,即使path不完整也会自动首尾相接；</p>
+<p>strokeStart以及strokeEnd代表着在这个path中所占用的百分比；</p>
+<p>CAShapeLayer动画仅仅限于沿着边缘的动画效果,它实现不了填充效果。</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 路径信息 一般是 UIBezierPath 的CGPath 属性</span></span><br><span class="line">public var path: <span class="built_in">CGPath</span>?</span><br><span class="line"><span class="comment">// 填充颜色    </span></span><br><span class="line">public var fillColor: <span class="built_in">CGColor</span>?</span><br><span class="line"><span class="comment">// 填充规则    </span></span><br><span class="line">public var fillRule: String</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 路径颜色  </span></span><br><span class="line">public var strokeColor: <span class="built_in">CGColor</span>?</span><br><span class="line"><span class="comment">// 路径开始结束位置 0.0f ~ 1.0f   </span></span><br><span class="line">public var strokeStart: <span class="built_in">CGFloat</span>    </span><br><span class="line">public var strokeEnd: <span class="built_in">CGFloat</span></span><br><span class="line"><span class="comment">// 路径宽度    </span></span><br><span class="line">public var lineWidth: <span class="built_in">CGFloat</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/* The miter limit used when stroking the path. Defaults to ten.</span></span><br><span class="line"><span class="comment">* Animatable. */</span></span><br><span class="line"><span class="comment">// 最大斜接长度。</span></span><br><span class="line">public var miterLimit: <span class="built_in">CGFloat</span></span><br><span class="line"><span class="comment">// 路径接口拐角类型    </span></span><br><span class="line">public var lineCap: String</span><br><span class="line">public var lineJoin: String</span><br><span class="line"><span class="comment">// 线型模板的起始位置    </span></span><br><span class="line">public var lineDashPhase: <span class="built_in">CGFloat</span></span><br><span class="line"><span class="comment">// 线型模板 这是一个NSNumber的数组，索引从1开始记，奇数位数值表示实线长度，偶数位数值表示空白长度</span></span><br><span class="line">public var lineDashPattern: [<span class="built_in">NSNumber</span>]?</span><br><span class="line">public let kCAFillRuleNonZero: String</span><br><span class="line">public let kCAFillRuleEvenOdd: String</span><br><span class="line"></span><br><span class="line">public let kCALineJoinMiter: String</span><br><span class="line">public let kCALineJoinRound: String</span><br><span class="line">public let kCALineJoinBevel: String</span><br><span class="line"></span><br><span class="line">public let kCALineCapButt: String</span><br><span class="line">public let kCALineCapRound: String</span><br><span class="line">public let kCALineCapSquare: String</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>更多内容可以参考</p>
+<p><a href="http://blog.csdn.net/iunion/article/details/26221213" target="_blank" rel="noopener">IOS Core Animation Advanced Techniques的学习笔记(五)</a></p>
+<p><a href="https://xinxibin.com/ios-UIBezierPath#more">iOS UIBezierPath 绘制图形</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！E</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/HeaderImage/weixin.png" alt="xinxibin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CAShapeLayer/" rel="tag">#CAShapeLayer</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/18/ios-UIBezierPath/" rel="next" title="iOS UIBezierPath 绘制图形">
+                <i class="fa fa-chevron-left"></i> iOS UIBezierPath 绘制图形
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/19/iOS-CAAnimation-Subclass/" rel="prev" title="iOS CAAnimation类及其子类详解（持续更新使用方法）">
+                iOS CAAnimation类及其子类详解（持续更新使用方法） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -665,6 +464,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/18/iOS-CAShapeLayer/"
+           data-title="iOS CAShapeLayer类详解" data-url="https://xinxibin.com/2016/07/18/iOS-CAShapeLayer/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -684,8 +491,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/HeaderImage/MyHeaderImageView.png"
@@ -792,6 +608,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -894,11 +721,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

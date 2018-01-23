@@ -1,0 +1,928 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?8e52e8730ee67f64dd4a217cca4ba852";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="N0z9_FFsGsVELjAFKUbn1FXBsEMM8n90KL6ZO7mBy1A" />
+
+
+
+
+  <meta name="baidu-site-verification" content="R5T666wKBF" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CAAnimation,CAMediaTiming,CAMediaTimingFunction,CAAnimationGroup,CAPropertyAnimation,CATransition,CABasicAnimation,CAKyeframeAnimation," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="xibin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="CAAnimation 是 QuartzCore 框架下的类。 CAAnimation类，是一个抽象类。遵循CAMediaTiming协议和CAAction协议！其子类用一张图来表示：CAAnimation是所有动画类的父类，但是它不能直接使用，应该使用它的子类。图中紫色的线为继承某个父类，红色线为遵守某个协议。下面针对每个类一一介绍。">
+<meta name="keywords" content="CAAnimation,CAMediaTiming,CAMediaTimingFunction,CAAnimationGroup,CAPropertyAnimation,CATransition,CABasicAnimation,CAKyeframeAnimation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS CAAnimation类及其子类详解（持续更新使用方法）">
+<meta property="og:url" content="https://xinxibin.com/2016/07/19/iOS-CAAnimation-Subclass/index.html">
+<meta property="og:site_name" content="xibin&#39;s Blog">
+<meta property="og:description" content="CAAnimation 是 QuartzCore 框架下的类。 CAAnimation类，是一个抽象类。遵循CAMediaTiming协议和CAAction协议！其子类用一张图来表示：CAAnimation是所有动画类的父类，但是它不能直接使用，应该使用它的子类。图中紫色的线为继承某个父类，红色线为遵守某个协议。下面针对每个类一一介绍。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oahmyhzk1.bkt.clouddn.com/image/pngpngCAAnimationTRee.png">
+<meta property="og:updated_time" content="2016-08-23T03:11:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS CAAnimation类及其子类详解（持续更新使用方法）">
+<meta name="twitter:description" content="CAAnimation 是 QuartzCore 框架下的类。 CAAnimation类，是一个抽象类。遵循CAMediaTiming协议和CAAction协议！其子类用一张图来表示：CAAnimation是所有动画类的父类，但是它不能直接使用，应该使用它的子类。图中紫色的线为继承某个父类，红色线为遵守某个协议。下面针对每个类一一介绍。">
+<meta name="twitter:image" content="http://oahmyhzk1.bkt.clouddn.com/image/pngpngCAAnimationTRee.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6269598732191270000,
+      author: '作者'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://xinxibin.com/2016/07/19/iOS-CAAnimation-Subclass/"/>
+
+  <title> iOS CAAnimation类及其子类详解（持续更新使用方法） | xibin's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?45b323ca8261b3bd9c7db81787824ee9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xibin's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Nothing is impossible</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS CAAnimation类及其子类详解（持续更新使用方法）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-19T15:44:17+08:00" content="2016-07-19">
+              2016-07-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Code/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/19/iOS-CAAnimation-Subclass/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/19/iOS-CAAnimation-Subclass/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/19/iOS-CAAnimation-Subclass/" class="leancloud_visitors" data-flag-title="iOS CAAnimation类及其子类详解（持续更新使用方法）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CAAnimation 是 QuartzCore 框架下的类。 CAAnimation类，是一个抽象类。遵循CAMediaTiming协议和CAAction协议！<br>其子类用一张图来表示：<br><img src="http://oahmyhzk1.bkt.clouddn.com/image/pngpngCAAnimationTRee.png" alt=""><br>CAAnimation是所有动画类的父类，但是它不能直接使用，应该使用它的子类。<br>图中紫色的线为继承某个父类，红色线为遵守某个协议。<br>下面针对每个类一一介绍。</p>
+<a id="more"></a>
+<blockquote>
+<p>CAAnimationGroup 允许多个动画同时播放。<br>CATransition 提供渐变效果:(推拉push效果,消退fade效果,揭开reveal效果)。<br>CABasicAnimation 提供了对单一动画的实现。<br>CAKeyframeAnimation 关键桢动画,可以定义行动路线。<br>CAConstraint 约束类,在布局管理器类中用它来设置属性。<br>CAConstraintLayoutManager 约束布局管理器,是用来将多个CALayer进行布局的.各个CALayer是通过名称来区分,而布局属性是通过CAConstraint来设置的。<br>CATransaction 事务类,可以对多个layer的属性同时进行修改.它分隐式事务,和显式事务。</p>
+</blockquote>
+<h2 id="CAAnimation-类-全部属性和方法"><a href="#CAAnimation-类-全部属性和方法" class="headerlink" title="CAAnimation 类 全部属性和方法"></a>CAAnimation 类 全部属性和方法</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据属性key，返回相应的属性值</span></span><br><span class="line">public <span class="keyword">class</span> func defaultValueForKey(key: String) -&gt; AnyObject?</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	返回指定的属性值是否可以归档。</span></span><br><span class="line"><span class="comment">	key：指定的属性。</span></span><br><span class="line"><span class="comment">	YES：指明该属性可以被归档；NO：不能被归档。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public func shouldArchiveValueForKey(key: String) -&gt; Bool</span><br><span class="line"></span><br><span class="line"><span class="comment">// 速度控制函数实例对象(下面会讲)</span></span><br><span class="line">public var timingFunction: <span class="built_in">CAMediaTimingFunction</span>?</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为CAAnimation设置代理。默认为nil。</span></span><br><span class="line"><span class="comment">// 注意：一个CAAnimation实例，不能设置delegate为self。会引起循环引用。   </span></span><br><span class="line">public var delegate: AnyObject?</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置是否动画完成后，动画效果从设置的layer上移除。默认为YES。   </span></span><br><span class="line">public var removedOnCompletion: Bool</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 两个协议方法 </span></span><br><span class="line">extension <span class="built_in">NSObject</span> &#123;</span><br><span class="line">    <span class="comment">// 动画开始回调</span></span><br><span class="line">    public func animationDidStart(anim: <span class="built_in">CAAnimation</span>)</span><br><span class="line">    <span class="comment">// 动画结束回调 可以通过flag判断动画是否执行完成</span></span><br><span class="line">    public func animationDidStop(anim: <span class="built_in">CAAnimation</span>, finished flag: Bool)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CAMediaTiming-时间系统协议"><a href="#CAMediaTiming-时间系统协议" class="headerlink" title="CAMediaTiming 时间系统协议"></a>CAMediaTiming 时间系统协议</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是相对于父级对象的开始时间,默认情况下所有的时间先都是一致的，都是 0 除非人为改变</span></span><br><span class="line">public var beginTime: <span class="built_in">CFTimeInterval</span> &#123; get set &#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这个timeOffset可能是这几个属性中比较难理解的一个,官方的文档也没有讲的很清楚. local time也分成两种一种是active local time 一种是basic local time.</span></span><br><span class="line"><span class="comment">timeOffset则是active local time的偏移量. </span></span><br><span class="line"><span class="comment">你将一个动画看作一个环,timeOffset改变的其实是动画在环内的起点,比如一个duration为5秒的动画,将timeOffset设置为2(或者7,模5为2),那么动画的运行则是从原来的2秒开始到5秒,接着再0秒到2秒,完成一次动画.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public var duration: <span class="built_in">CFTimeInterval</span> &#123; get set &#125;</span><br><span class="line"><span class="comment">// speed属性用于设置当前对象的时间流相对于父级对象时间流的流逝速度 ( speed有叠加的效果.  比如一个speed为2的layer其所有的父辈的speed都是1,它有一个subLayer,speed也为2,那么一个8秒的动画在这个运行于这个subLayer只需2秒(8 / (2 * 2)).所以speed有叠加的效果.) </span></span><br><span class="line">public var speed: Float &#123; get set &#125;</span><br><span class="line"><span class="comment">// fillMode的作用就是决定当前对象过了非active时间段的行为 </span></span><br><span class="line"><span class="comment">// 如果是一个动画CAAnimation,则需要将其removedOnCompletion设置为NO,要不然fillMode不起作用.</span></span><br><span class="line">public var timeOffset: <span class="built_in">CFTimeInterval</span> &#123; get set &#125;</span><br><span class="line"><span class="comment">// 重复次数</span></span><br><span class="line">public var repeatCount: Float &#123; get set &#125;</span><br><span class="line"><span class="comment">// 重复时间</span></span><br><span class="line">public var repeatDuration: <span class="built_in">CFTimeInterval</span> &#123; get set &#125;</span><br><span class="line"><span class="comment">// 在每次间隔交替循环过程中自动回放</span></span><br><span class="line">public var autoreverses: Bool &#123; get set &#125;</span><br><span class="line"><span class="comment">// 动画行为</span></span><br><span class="line">public var fillMode: String &#123; get set &#125;</span><br><span class="line"><span class="comment">/* `fillMode' options. */</span></span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCAFillModeForwards: String</span><br><span class="line"><span class="comment">// 当动画结束后,layer会一直保持着动画最后的状态 </span></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCAFillModeBackwards: String</span><br><span class="line"><span class="comment">// 就是在动画开始前,你只要将动画加入了一个layer,layer便立即进入动画的初始状态。因为有可能出现fromValue不是目前layer的初始状态的情况，如果fromValue就是layer当前的状态，则这个参数就没太大意义。</span></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCAFillModeBoth: String</span><br><span class="line"><span class="comment">// 这个其实就是上面两个( kCAFillModeForwards kCAFillModeBackwards )的合成.动画加入后开始之前,layer便处于动画初始状态,动画结束后layer保持动画最后的状态.</span></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCAFillModeRemoved: String</span><br><span class="line"><span class="comment">// 这个是默认值,也就是说当动画开始前和动画结束后,动画对layer都没有影响,动画结束后,layer会恢复到之前的状态</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://geeklu.com/2012/09/animation-in-ios/" target="_blank" rel="noopener">更多 iOS Animation 请点击</a></p>
+</blockquote>
+<h2 id="CAMediaTimingFunction-速度控制函数"><a href="#CAMediaTimingFunction-速度控制函数" class="headerlink" title="CAMediaTimingFunction  速度控制函数"></a>CAMediaTimingFunction  速度控制函数</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化 ( 常用 )</span></span><br><span class="line">public convenience init(name: String)</span><br><span class="line"><span class="comment">// 指定一个三次贝塞尔曲线控制点的自定义时间 （ 一般不常用 ）</span></span><br><span class="line">public init(controlPoints c1x: Float, _ c1y: Float, _ c2x: Float, _ c2y: Float)    </span><br><span class="line"><span class="comment">// 返回指定索引的控制点。</span></span><br><span class="line">public func getControlPointAtIndex(idx: Int, values ptr: UnsafeMutablePointer&lt;Float&gt;)</span><br><span class="line">    </span><br><span class="line"><span class="comment">/** Timing function names. **/</span></span><br><span class="line">    kCAMediaTimingFunctionLinear（线性）：匀速，给你相对静态的感觉</span><br><span class="line">    kCAMediaTimingFunctionEaseIn（渐进）：动画缓慢进然后加速离开</span><br><span class="line">    kCAMediaTimingFunctionEaseOut（渐出）：动画全速，然后减速的到达目的地</span><br><span class="line">    kCAMediaTimingFunctionEaseInEaseOut（渐进渐出）：动画缓慢的进入，中间加速，然后减速的到达目的地。</span><br></pre></td></tr></table></figure>
+<h2 id="CATransition-是CAAnimation的子类-（-专场动画使用-）"><a href="#CATransition-是CAAnimation的子类-（-专场动画使用-）" class="headerlink" title="CATransition 是CAAnimation的子类 （ 专场动画使用 ）"></a>CATransition 是CAAnimation的子类 （ 专场动画使用 ）</h2><blockquote>
+<p>能够为层提供移出屏幕和移入屏幕的动画效果。iOS比Mac OS X的转场动画效果少一点<br>UINavigationController就是通过CATransition实现了将控制器的视图推入屏幕的动画效果<br>动画属性:</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** Transition animation subclass. **/</span></span><br><span class="line">public <span class="keyword">class</span> <span class="built_in">CATransition</span> : <span class="built_in">CAAnimation</span> &#123;</span><br><span class="line">    <span class="comment">// 动画过渡类型    </span></span><br><span class="line">    public var type: String</span><br><span class="line">    <span class="comment">// 动画过渡方向</span></span><br><span class="line">    public var subtype: String?</span><br><span class="line">    <span class="comment">// 动画起点(在整体动画的百分比)</span></span><br><span class="line">    public var startProgress: Float</span><br><span class="line">    <span class="comment">// 动画终点(在整体动画的百分比)</span></span><br><span class="line">    public var endProgress: Float</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		为动画添加一个可选的滤镜。</span></span><br><span class="line"><span class="comment">		如果指定，那么指定的filter必须同时支持x和y，否则该filter将不起作用。</span></span><br><span class="line"><span class="comment">		默认值为nil。</span></span><br><span class="line"><span class="comment">		如果设置了filter，那么，为layer设置的type和subtype属性将被忽略。</span></span><br><span class="line"><span class="comment">		该属性只在iOS 5.0以及以后版本被支持。</span></span><br><span class="line"><span class="comment">		如果设置了filter，那么必须实现`inputImage', `inputTargetImage' and `inputTime' input</span></span><br><span class="line"><span class="comment">		keys, and the `outputImage' output key. Optionally it may support</span></span><br><span class="line"><span class="comment">		the `inputExtent' key,</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">    public var filter: AnyObject?</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Common transition types. */</span></span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionFade: String</span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionMoveIn: String</span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionPush: String</span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionReveal: String</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Common transition subtypes. */</span></span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionFromRight: String</span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionFromLeft: String</span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionFromTop: String</span><br><span class="line"></span><br><span class="line">@available(iOS <span class="number">2.0</span>, *)</span><br><span class="line">public let kCATransitionFromBottom: String</span><br></pre></td></tr></table></figure>
+<h2 id="CAAnimationGroup-动画组"><a href="#CAAnimationGroup-动画组" class="headerlink" title="CAAnimationGroup 动画组"></a>CAAnimationGroup 动画组</h2><p>CAAnimationGroup 是 CAAanimation 的子类，可以保存一组动画对象，将CAAnimationGroup对象加入层，组中所有动画可以同时并发运行。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只有一个属性 用来保存一组动画对象的数组</span></span><br><span class="line">public var animations: [<span class="built_in">CAAnimation</span>]?</span><br></pre></td></tr></table></figure>
+<h2 id="CAPropertyAnimation-属性动画"><a href="#CAPropertyAnimation-属性动画" class="headerlink" title="CAPropertyAnimation  属性动画"></a>CAPropertyAnimation  属性动画</h2><p>CAPropertyAnimation 是 CAAnimation 子类，抽象类 不能直接使用 需要使用其两个子类来实现动画。</p>
+<blockquote>
+<p>CABasicAnimation<br>CAKeyframeAnimation</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** Subclass for property-based animations. **/</span></span><br><span class="line">public <span class="keyword">class</span> <span class="built_in">CAPropertyAnimation</span> : <span class="built_in">CAAnimation</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Creates a new animation object with its `keyPath' property set to</span></span><br><span class="line"><span class="comment">     * 'path'. */</span></span><br><span class="line">    </span><br><span class="line">    public convenience init(keyPath path: String?)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* The key-path describing the property to be animated. */</span></span><br><span class="line">    <span class="comment">// 过指定layer的一个属性名，并且对CALayer的这个属性的值进行修改，达到相应的效果。</span></span><br><span class="line">    public var keyPath: String?</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* When true the value specified by the animation will be "added" to</span></span><br><span class="line"><span class="comment">     * the current presentation value of the property to produce the new</span></span><br><span class="line"><span class="comment">     * presentation value. The addition function is type-dependent, e.g.</span></span><br><span class="line"><span class="comment">     * for affine transforms the two matrices are concatenated. Defaults to</span></span><br><span class="line"><span class="comment">     * NO. */</span></span><br><span class="line">    </span><br><span class="line">    public var additive: Bool</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* The `cumulative' property affects how repeating animations produce</span></span><br><span class="line"><span class="comment">     * their result. If true then the current value of the animation is the</span></span><br><span class="line"><span class="comment">     * value at the end of the previous repeat cycle, plus the value of the</span></span><br><span class="line"><span class="comment">     * current repeat cycle. If false, the value is simply the value</span></span><br><span class="line"><span class="comment">     * calculated for the current repeat cycle. Defaults to NO. */</span></span><br><span class="line">    </span><br><span class="line">    public var cumulative: Bool</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* If non-nil a function that is applied to interpolated values</span></span><br><span class="line"><span class="comment">     * before they are set as the new presentation value of the animation's</span></span><br><span class="line"><span class="comment">     * target property. Defaults to nil. */</span></span><br><span class="line">    </span><br><span class="line">    public var valueFunction: <span class="built_in">CAValueFunction</span>?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>属性说明：<br>–keyPath：通过指定CALayer的一个属性名称为keyPath（String类型），并且对CALayer的这个属性的值进行修改，达到相应的动画效果。比如，指定@“position”为keyPath，就修改CALayer的position属性的值，以达到平移的动画效果</p>
+</blockquote>
+<p><a href="https://developer.apple.com/reference/quartzcore/capropertyanimation" target="_blank" rel="noopener">官方 CAPropertyAnimation</a><br><a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAValueFunction_class/index.html" target="_blank" rel="noopener">官方 CAValueFunction</a></p>
+<h2 id="CABasicAnimation-属性动画-单一动画"><a href="#CABasicAnimation-属性动画-单一动画" class="headerlink" title="CABasicAnimation 属性动画 单一动画"></a>CABasicAnimation 属性动画 单一动画</h2><p>CABasicAnimation 是 CAPropertyAnimation 子类 用于实现单一的动画 </p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// keyPath 初始位置</span></span><br><span class="line">public var fromValue: AnyObject?</span><br><span class="line"><span class="comment">// keyPath 相应的结束值 （绝对值）</span></span><br><span class="line">public var toValue: AnyObject?</span><br><span class="line"><span class="comment">// 终结值 （相对值）</span></span><br><span class="line">public var byValue: AnyObject?</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>动画过程说明：<br>–随着动画的进行，在长度为duration的持续时间内，keyPath相应属性的值从fromValue渐渐地变为toValue<br>–keyPath内容是CALayer的可动画Animatable属性<br>–如果fillMode=kCAFillModeForwards同时removedOnComletion=NO，那么在动画执行完毕后，图层会保持显示动画执行后的状态。但在实质上，图层的属性值还是动画执行前的初始值，并没有真正被改变。</p>
+</blockquote>
+<h2 id="CAKeyframeAnimation-称为关键帧动画"><a href="#CAKeyframeAnimation-称为关键帧动画" class="headerlink" title="CAKeyframeAnimation 称为关键帧动画"></a>CAKeyframeAnimation 称为关键帧动画</h2><p>CAPropertyAnimation的子类，与CABasicAnimation的区别是：<br>–CABasicAnimation只能从一个数值（fromValue）变到另一个数值（toValue），而CAKeyframeAnimation会使用一个数组保存这些数值</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public var values: [AnyObject]?</span><br><span class="line">public var path: <span class="built_in">CGPath</span>?</span><br><span class="line">public var keyTimes: [<span class="built_in">NSNumber</span>]?</span><br><span class="line"><span class="comment">// 上面已讲</span></span><br><span class="line">public var timingFunctions: [<span class="built_in">CAMediaTimingFunction</span>]?</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	该属性决定了物体在每个子路径下是跳着走还是匀速走，跟timeFunctions属性有点类似</span></span><br><span class="line"><span class="comment">	const kCAAnimationLinear//线性，默认</span></span><br><span class="line"><span class="comment">	const kCAAnimationDiscrete//离散，无中间过程，但keyTimes设置的时间依旧生效，物体跳跃地出现在各个关键帧上</span></span><br><span class="line"><span class="comment">	const kCAAnimationPaced//平均，keyTimes跟timeFunctions失效</span></span><br><span class="line"><span class="comment">	const kCAAnimationCubic//平均，同上</span></span><br><span class="line"><span class="comment">	const kCAAnimationCubicPaced//平均，同上</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public var calculationMode: String</span><br><span class="line">    </span><br><span class="line">public var tensionValues: [<span class="built_in">NSNumber</span>]?</span><br><span class="line">public var continuityValues: [<span class="built_in">NSNumber</span>]?</span><br><span class="line">public var biasValues: [<span class="built_in">NSNumber</span>]?</span><br><span class="line">public var rotationMode: String?</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>属性说明：<br>–values：上述的NSArray对象。里面的元素称为“关键帧”(keyframe)。动画对象会在指定的时间（duration）内，依次显示values数组中的每一个关键帧<br>–path：可以设置一个CGPathRef、CGMutablePathRef，让图层按照路径轨迹移动。path只对CALayer的anchorPoint和position起作用。如果设置了path，那么values将被忽略<br>–keyTimes：可以为对应的关键帧指定对应的时间点，其取值范围为0到1.0，keyTimes中的每一个时间值都对应values中的每一帧。如果没有设置keyTimes，各个关键帧的时间是平分的<br>•CABasicAnimation可看做是只有2个关键帧的CAKeyframeAnimation</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用一下两个属性来控制 动画结束后的状态</span></span><br><span class="line">animation.removedOnCompletion = <span class="literal">NO</span>;</span><br><span class="line">animation.fillMode = kCAFillModeForwards;</span><br></pre></td></tr></table></figure>
+<p><a href="https://developer.apple.com/reference/quartzcore/cakeyframeanimation" target="_blank" rel="noopener">官方文档 CAKeyframeAnimation</a></p>
+<p>博客中暂时没有回复功能：<br>可以来这里给我回复<a href="http://www.jianshu.com/p/c42cc91e3a06" target="_blank" rel="noopener">简书</a></p>
+<blockquote>
+<p>本文部分内容来源于网络，在这里加以整理，方便自己以后查阅。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！E</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/HeaderImage/weixin.png" alt="xinxibin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CAAnimation/" rel="tag">#CAAnimation</a>
+          
+            <a href="/tags/CAMediaTiming/" rel="tag">#CAMediaTiming</a>
+          
+            <a href="/tags/CAMediaTimingFunction/" rel="tag">#CAMediaTimingFunction</a>
+          
+            <a href="/tags/CAAnimationGroup/" rel="tag">#CAAnimationGroup</a>
+          
+            <a href="/tags/CAPropertyAnimation/" rel="tag">#CAPropertyAnimation</a>
+          
+            <a href="/tags/CATransition/" rel="tag">#CATransition</a>
+          
+            <a href="/tags/CABasicAnimation/" rel="tag">#CABasicAnimation</a>
+          
+            <a href="/tags/CAKyeframeAnimation/" rel="tag">#CAKyeframeAnimation</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/18/iOS-CAShapeLayer/" rel="next" title="iOS CAShapeLayer类详解">
+                <i class="fa fa-chevron-left"></i> iOS CAShapeLayer类详解
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/21/iOS-CoreAnimation-animationWithKeyPath/" rel="prev" title="iOS CAPropertyAnimation 可用的 animationWithKeyPath">
+                iOS CAPropertyAnimation 可用的 animationWithKeyPath <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/19/iOS-CAAnimation-Subclass/"
+           data-title="iOS CAAnimation类及其子类详解（持续更新使用方法）" data-url="https://xinxibin.com/2016/07/19/iOS-CAAnimation-Subclass/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/HeaderImage/MyHeaderImageView.png"
+               alt="xinxibin" />
+          <p class="site-author-name" itemprop="name">xinxibin</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xinxibin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://eliyar.biz" title="eliyar" target="_blank">eliyar</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yoferzhang.com/#" title="Yoferzhang" target="_blank">Yoferzhang</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.devtang.com/" title="唐巧" target="_blank">唐巧</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onevcat.com/" title="王巍" target="_blank">王巍</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://beyondvincent.com/" title="破船" target="_blank">破船</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiangwangfeng.com/" title="阿毛的蛋疼地" target="_blank">阿毛的蛋疼地</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imtx.me/" title="I'M TUALATRIX" target="_blank">I'M TUALATRIX</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAAnimation-类-全部属性和方法"><span class="nav-number">1.</span> <span class="nav-text">CAAnimation 类 全部属性和方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAMediaTiming-时间系统协议"><span class="nav-number">2.</span> <span class="nav-text">CAMediaTiming 时间系统协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAMediaTimingFunction-速度控制函数"><span class="nav-number">3.</span> <span class="nav-text">CAMediaTimingFunction  速度控制函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CATransition-是CAAnimation的子类-（-专场动画使用-）"><span class="nav-number">4.</span> <span class="nav-text">CATransition 是CAAnimation的子类 （ 专场动画使用 ）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAAnimationGroup-动画组"><span class="nav-number">5.</span> <span class="nav-text">CAAnimationGroup 动画组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAPropertyAnimation-属性动画"><span class="nav-number">6.</span> <span class="nav-text">CAPropertyAnimation  属性动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CABasicAnimation-属性动画-单一动画"><span class="nav-number">7.</span> <span class="nav-text">CABasicAnimation 属性动画 单一动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAKeyframeAnimation-称为关键帧动画"><span class="nav-number">8.</span> <span class="nav-text">CAKeyframeAnimation 称为关键帧动画</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xinxibin</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crazyxin"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("YfUPTpym1zjK48WwXoYSRNPJ-gzGzoHsz", "U8Ygv26lc2V340lo8ebg4i9Q");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
