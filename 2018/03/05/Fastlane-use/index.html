@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://oahmyhzk1.bkt.clouddn.com/2018-03-05-屏幕快照 2018-03-05 下午6.13.39.png">
 <meta property="og:image" content="http://oahmyhzk1.bkt.clouddn.com/2018-03-05-1520245848957.jpg">
 <meta property="og:image" content="http://oahmyhzk1.bkt.clouddn.com/2018-03-05-屏幕快照 2018-03-05 下午6.38.15.png">
-<meta property="og:updated_time" content="2018-03-05T10:47:03.000Z">
+<meta property="og:updated_time" content="2018-03-07T08:43:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 使用 fastlane 实现自动打包上传">
 <meta name="twitter:description" content="fastlane 自动化iOS打包上传安装 fastlane安装fastlane之前，我们得安装ruby，因为fastlane使用ruby语言写的，安装ruby前，我们要先安装一个mac软件包管理工具。 1.安装HomeBrew 1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/">
@@ -457,6 +457,8 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">lane <span class="symbol">:update_to_crashlytics</span> <span class="keyword">do</span></span><br><span class="line"></span><br><span class="line">  	upload_symbols_to_crashlytics(</span><br><span class="line">  		<span class="symbol">dsym_path:</span> <span class="string">"./fastlane/build/PushupsApp.app.dSYM.zip"</span>,</span><br><span class="line">  		<span class="symbol">api_token:</span> <span class="string">"你自己的appkey"</span></span><br><span class="line">  		)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>完整 Fastfile 文件<br><img src="http://oahmyhzk1.bkt.clouddn.com/2018-03-05-屏幕快照 2018-03-05 下午6.38.15.png" alt="屏幕快照 2018-03-05 下午6.38.15"></p>
 <h2 id="致辞今天分享已经结束"><a href="#致辞今天分享已经结束" class="headerlink" title="致辞今天分享已经结束"></a>致辞今天分享已经结束</h2><p>明天有时间研究下<a href="https://docs.fastlane.tools/getting-started/ios/screenshots/" target="_blank" rel="noopener">自动截屏</a></p>
+<p>下一篇：<br><strong>使用 fastlane screenshots 为 App Store 添加引导图</strong></p>
+<p><a href="http://xinxibin.com/2018/03/05/fastlane-screenshots/">文章地址</a></p>
 <p><strong>参考文档</strong></p>
 <blockquote>
 <p><a href="https://docs.fastlane.tools/getting-started/ios/screenshots/" target="_blank" rel="noopener">官网文档</a></p>
@@ -500,6 +502,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/07/fastlane-screenshots/" rel="prev" title="使用 fastlane screenshots 进行App 截图、添加边框、标题">
+                使用 fastlane screenshots 进行App 截图、添加边框、标题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -576,7 +582,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
