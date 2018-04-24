@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="UITextView,UITextfield," />
+  <meta name="keywords" content="Homeassistant," />
 
 
 
@@ -100,18 +100,24 @@
 
 
 
-<meta name="description" content="由于项目之前的计算文字的方法有问题，之前的是不管是汉字还是数字，字符，字母都是一个字符。所以产品需求改变，汉字一个字符，其他两个算一个字符，比如： 11 算一个字符 、aa 算一个字符、 a7 算一个字符。 所以这里整理下计算文字字符数的方法分享给大家，希望对大家有所帮助。">
-<meta name="keywords" content="UITextView,UITextfield">
+<meta name="description" content="Homeassistant 接入 RMPro一、Home Assistant 安装三、MAC 安装 homebridge 在homeassistant 中接入 博联万能遥控器broadlink RMPro 官方接入文档 这里只是简单介绍 接入流程  一、Home Assistant 安装">
+<meta name="keywords" content="Homeassistant">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仿微博计算文字数量 适用于UITextView&#x2F;UITextfield">
-<meta property="og:url" content="https://xinxibin.com/2016/06/21/Swift-Imitation weibo calculation length of text/index.html">
+<meta property="og:title" content="二、Home Assistant 接入 RMPro">
+<meta property="og:url" content="https://xinxibin.com/2018/04/24/Home-Assistant-join-RMPro/index.html">
 <meta property="og:site_name" content="xibin&#39;s Blog">
-<meta property="og:description" content="由于项目之前的计算文字的方法有问题，之前的是不管是汉字还是数字，字符，字母都是一个字符。所以产品需求改变，汉字一个字符，其他两个算一个字符，比如： 11 算一个字符 、aa 算一个字符、 a7 算一个字符。 所以这里整理下计算文字字符数的方法分享给大家，希望对大家有所帮助。">
+<meta property="og:description" content="Homeassistant 接入 RMPro一、Home Assistant 安装三、MAC 安装 homebridge 在homeassistant 中接入 博联万能遥控器broadlink RMPro 官方接入文档 这里只是简单介绍 接入流程  一、Home Assistant 安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-06-27T08:44:34.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1339729-9f009cdfd372ec52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1339729-f2a5b08ae7cca3f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1339729-a7f8542fb3c515c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1339729-7787335697cd7f53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1339729-f3194df20ea0cdd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-04-24T03:18:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仿微博计算文字数量 适用于UITextView&#x2F;UITextfield">
-<meta name="twitter:description" content="由于项目之前的计算文字的方法有问题，之前的是不管是汉字还是数字，字符，字母都是一个字符。所以产品需求改变，汉字一个字符，其他两个算一个字符，比如： 11 算一个字符 、aa 算一个字符、 a7 算一个字符。 所以这里整理下计算文字字符数的方法分享给大家，希望对大家有所帮助。">
+<meta name="twitter:title" content="二、Home Assistant 接入 RMPro">
+<meta name="twitter:description" content="Homeassistant 接入 RMPro一、Home Assistant 安装三、MAC 安装 homebridge 在homeassistant 中接入 博联万能遥控器broadlink RMPro 官方接入文档 这里只是简单介绍 接入流程  一、Home Assistant 安装">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1339729-9f009cdfd372ec52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -140,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="https://xinxibin.com/2016/06/21/Swift-Imitation weibo calculation length of text/"/>
+  <link rel="canonical" href="https://xinxibin.com/2018/04/24/Home-Assistant-join-RMPro/"/>
 
 
 
 
 
-  <title>仿微博计算文字数量 适用于UITextView/UITextfield | xibin's Blog</title>
+  <title>二、Home Assistant 接入 RMPro | xibin's Blog</title>
   
 
 
@@ -299,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xinxibin.com/2016/06/21/Swift-Imitation weibo calculation length of text/">
+    <link itemprop="mainEntityOfPage" href="https://xinxibin.com/2018/04/24/Home-Assistant-join-RMPro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xinxibin">
@@ -316,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">仿微博计算文字数量 适用于UITextView/UITextfield</h1>
+          <h1 class="post-title" itemprop="name headline">二、Home Assistant 接入 RMPro</h1>
         
 
         <div class="post-meta">
@@ -328,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-21T17:30:34+08:00">
-                2016-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T11:14:54+08:00">
+                2018-04-24
               </time>
             
 
@@ -351,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
+                  <a href="/categories/Document/" itemprop="url" rel="index">
+                    <span itemprop="name">Document</span>
                   </a>
                 </span>
 
@@ -362,8 +368,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/Document/Home-Assistant/" itemprop="url" rel="index">
+                    <span itemprop="name">Home Assistant</span>
                   </a>
                 </span>
 
@@ -379,7 +385,7 @@
 
           
           
-             <span id="/2016/06/21/Swift-Imitation weibo calculation length of text/" class="leancloud_visitors" data-flag-title="仿微博计算文字数量 适用于UITextView/UITextfield">
+             <span id="/2018/04/24/Home-Assistant-join-RMPro/" class="leancloud_visitors" data-flag-title="二、Home Assistant 接入 RMPro">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,15 +416,19 @@
       
 
       
-        <p>由于项目之前的计算文字的方法有问题，之前的是不管是汉字还是数字，字符，字母都是一个字符。所以产品需求改变，汉字一个字符，其他两个算一个字符，比如： 11 算一个字符 、aa 算一个字符、 a7 算一个字符。 所以这里整理下计算文字字符数的方法分享给大家，希望对大家有所帮助。</p>
-<a id="more"></a>
-<h2 id="ios-Textfield-or-TextView-显示文字字数计算"><a href="#ios-Textfield-or-TextView-显示文字字数计算" class="headerlink" title="ios Textfield or TextView 显示文字字数计算"></a>ios Textfield or TextView 显示文字字数计算</h2><h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">NSInteger</span>)countWord:(<span class="built_in">NSString</span>*)s</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSUInteger</span> asciiLength = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSUInteger</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">    		<span class="comment">// 得到第i个字符的ascii码</span></span><br><span class="line">        <span class="keyword">unichar</span> uc = [s characterAtIndex: i];</span><br><span class="line">        <span class="comment">// 判断是否是ASCII码 是 +1 否 +2 </span></span><br><span class="line">        asciiLength += isascii(uc) ? <span class="number">1</span> : <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 总字符➗2 = 实际字符</span></span><br><span class="line">    <span class="built_in">NSUInteger</span> unicodeLength = asciiLength / <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 判断是否是基数 基数说明多半个字符需要 +1 否则 不加</span></span><br><span class="line">    <span class="keyword">if</span>(asciiLength % <span class="number">2</span>) &#123;</span><br><span class="line">        unicodeLength++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> unicodeLength;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="这个是网上找到的据说是某微博的代码-你们可以参考下"><a href="#这个是网上找到的据说是某微博的代码-你们可以参考下" class="headerlink" title="这个是网上找到的据说是某微博的代码 你们可以参考下"></a>这个是网上找到的据说是某微博的代码 你们可以参考下</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="built_in">NSInteger</span>)sinaCountWord:(<span class="built_in">NSString</span> *)word</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSInteger</span> i, n =[word length],l=<span class="number">0</span>,a=<span class="number">0</span>,b=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">unichar</span> c;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        c=[word characterAtIndex:i];</span><br><span class="line">        <span class="keyword">if</span>(isblank(c))&#123;</span><br><span class="line">            b++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isascii(c))&#123;</span><br><span class="line">            a++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(a==<span class="number">0</span> &amp;&amp; l==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> l+(<span class="keyword">int</span>)ceilf((<span class="keyword">float</span>)(a+b)/<span class="number">2.0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>利用ASCII码对照表，转换输入的每个字符对比。<br>注释已经很清楚的不懂得可以看下</p>
-<p>源码地址：<a href="https://github.com/xinxibin/ios-Textfield-or-TextView-" target="_blank" rel="noopener">GitHub</a></p>
-<p>博客地址：<a href="https://xinxibin.com">xinxibin.com</a></p>
-<hr>
-<p>本来想准备一份 swift版本的，由于能力有限，没有转换出来<br>有朋友转换出来的话给我发一份，万分感谢。<br>邮箱地址：506907778@qq.com</p>
+        <h1 id="Homeassistant-接入-RMPro"><a href="#Homeassistant-接入-RMPro" class="headerlink" title="Homeassistant 接入 RMPro"></a>Homeassistant 接入 RMPro</h1><p><a href="https://xinxibin.com/2018/04/24/Mac-install-Homeassistant/">一、Home Assistant 安装</a><br><a href="https://xinxibin.com/2018/04/24/Mac-install-Homeassistant/">三、MAC 安装 homebridge</a></p>
+<p>在homeassistant 中接入 博联万能遥控器broadlink RMPro <a href="https://www.home-assistant.io/components/switch.broadlink/" target="_blank" rel="noopener">官方接入文档</a> 这里只是简单介绍 接入流程 </p>
+<p><a href="https://www.jianshu.com/p/9c65279ebb2e" target="_blank" rel="noopener">一、Home Assistant 安装  </a><br><a id="more"></a></p>
+<h2 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h2><p>手机下载app（智慧星） –&gt; 找到 RMPro –&gt; 联网 –&gt; 在路由器中查看ip、mac地址 –&gt; 打开 configuration.yaml 文件 –&gt; 填写配置 –&gt; 重启 HA –&gt; 网页访问 ip:8123 </p>
+<h2 id="学习红外指令"><a href="#学习红外指令" class="headerlink" title="学习红外指令"></a>学习红外指令</h2><p>登录HA网页<br><img src="http://upload-images.jianshu.io/upload_images/1339729-9f009cdfd372ec52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DA5EDB10-9B88-4EE2-B71D-3107FBFE4286"><br><img src="http://upload-images.jianshu.io/upload_images/1339729-f2a5b08ae7cca3f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2018-04-18 下午2.40.54"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1339729-a7f8542fb3c515c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1D60E7D8-B9B7-4B23-BA84-D1475EFA6643"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1339729-7787335697cd7f53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="19D60668-F937-4BEB-8C2A-BED469A6B777"></p>
+<p>完整的 configuration.yaml文件内容 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">switch:</span><br><span class="line">  - platform: broadlink</span><br><span class="line">    host: x.x.x.x                    #设备的ip地址  </span><br><span class="line">    mac: &apos;XX:XX:XX:XX:XX:XX&apos;         #设备的Mac地址 大写英文字母加数字</span><br><span class="line">    switches:</span><br><span class="line">      tv_bftv:              #名称可自定义</span><br><span class="line">        command_on: &apos;JgBQAAABLJEWDxYPFg8WDxYPFg8WNBYPFg8WDxYPFg8WDxYPFjQWDxYPFjUWDxY0Fg8WDxYPFg8WNBYPFjQWDxY1FjQWNBY1FQAF/QABK0gWAA0FAAAAAAAAAAA=&apos;               #学习后填入  </span><br><span class="line">        command_off: &apos;JgBQAAABLJEWDxYPFg8WDxYPFg8WNBYPFg8WDxYPFg8WDxYPFjQWDxYPFjUWDxY0Fg8WDxYPFg8WNBYPFjQWDxY1FjQWNBY1FQAF/QABK0gWAA0FAAAAAAAAAAA=&apos;              #学习后填入</span><br><span class="line"></span><br><span class="line">group: !include groups.yaml</span><br><span class="line">automation: !include automations.yaml</span><br><span class="line">script: !include scripts.yaml</span><br></pre></td></tr></table></figure>
+<h2 id="成功结果"><a href="#成功结果" class="headerlink" title="成功结果"></a>成功结果</h2><p>可以看到开关里面多了一项 tv_bftv 点击就可以实现控制电视的开关<br>更多红外指令学习方法同上<br><img src="http://upload-images.jianshu.io/upload_images/1339729-f3194df20ea0cdd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2018-04-18 下午2.35.59"></p>
+<blockquote>
+<p>tips<br>configuration.yaml 文件是你成功安装 HA之后才会有的<br>文件地址可查看<a href="https://www.hachina.io/forums/topic/3880" target="_blank" rel="noopener">这篇文章</a></p>
+</blockquote>
 
       
     </div>
@@ -436,9 +446,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/UITextView/" rel="tag"># UITextView</a>
-          
-            <a href="/tags/UITextfield/" rel="tag"># UITextfield</a>
+            <a href="/tags/Homeassistant/" rel="tag"># Homeassistant</a>
           
         </div>
       
@@ -451,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/26/Swift-Read the local json file/" rel="next" title="Swift 读取本地.json文件">
-                <i class="fa fa-chevron-left"></i> Swift 读取本地.json文件
+              <a href="/2018/04/24/Mac-install-Homeassistant/" rel="next" title="一 Mac 下安装 homeassistant">
+                <i class="fa fa-chevron-left"></i> 一 Mac 下安装 homeassistant
               </a>
             
           </div>
@@ -461,8 +469,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/29/Swift-LongpressMoveTocell/" rel="prev" title="Swift-使用长按收拾来移动cell">
-                Swift-使用长按收拾来移动cell <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/24/三、MAC-安装-homebridge/" rel="prev" title="三、MAC 安装 homebridge">
+                三、MAC 安装 homebridge <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -655,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ios-Textfield-or-TextView-显示文字字数计算"><span class="nav-number">1.</span> <span class="nav-text">ios Textfield or TextView 显示文字字数计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现代码"><span class="nav-number">2.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这个是网上找到的据说是某微博的代码-你们可以参考下"><span class="nav-number">3.</span> <span class="nav-text">这个是网上找到的据说是某微博的代码 你们可以参考下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">4.</span> <span class="nav-text">实现原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Homeassistant-接入-RMPro"><span class="nav-number">1.</span> <span class="nav-text">Homeassistant 接入 RMPro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#大致流程"><span class="nav-number">1.1.</span> <span class="nav-text">大致流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习红外指令"><span class="nav-number">1.2.</span> <span class="nav-text">学习红外指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成功结果"><span class="nav-number">1.3.</span> <span class="nav-text">成功结果</span></a></li></ol></li></ol></div>
             
 
           </div>
